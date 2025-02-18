@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from POM_Clock_in_out.Locators.Locators import Locators
 
-class Login_page:
+class  Login_Invalid :
     def __init__(self, driver):
         self.driver = driver
 
@@ -16,3 +16,17 @@ class Login_page:
     def click_login(self):
 
         self.driver.find_element(By.XPATH, Locators.login_button_xpath).click()
+
+
+
+    def validate_login_success(self, expected_text):
+        print(f"Expected Text: {expected_text}")
+        element = self.driver.find_element(By.XPATH, "//h1")
+        actual_text = element.text
+        print(f"Actual Text: {actual_text}")
+        assert expected_text in actual_text, f"Login failed: Expected '{expected_text}' in '{actual_text}'"
+
+
+
+    def take_screenshot(self, file_path):
+        self.driver.save_screenshot(file_path)
