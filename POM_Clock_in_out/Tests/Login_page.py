@@ -23,8 +23,8 @@ class LoginTests(unittest.TestCase):
     def test1_login_valid_Credentials(self):
         driver = self.driver
         login_page = Login_valid(driver)
-        login_page.enter_username("LORAIT00030")
-        login_page.enter_password("Qy9!Jt2z")
+        login_page.enter_username("DUMMY004")
+        login_page.enter_password("Lora@1234")
         login_page.click_login()
         login_page.take_screenshot("Login_valid_Credentials.png")
         login_page.validate_login_success("Employee Dashboard")
@@ -32,7 +32,7 @@ class LoginTests(unittest.TestCase):
     def test2_login_invalid_Credentials(self):
          driver = self.driver
          login_page = Login_Invalid(driver)
-         login_page.enter_username("LORAIT00030")
+         login_page.enter_username("DUMMY004")
          login_page.enter_password("12345667")
          login_page.click_login()
          login_page.take_screenshot("Login_invalid_Credentials.png")
